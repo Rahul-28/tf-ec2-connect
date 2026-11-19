@@ -1,5 +1,5 @@
 terraform {
-    backend {
+    backend "s3" {
         bucket = "terraform_state_storage"
         key = "prod/network/terraform.tfstate"
         encrypt = true
