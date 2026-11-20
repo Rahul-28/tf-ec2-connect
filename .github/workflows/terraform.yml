@@ -27,12 +27,13 @@ jobs:
         id: fmt
         run: terraform fmt -check -recursive
 
-      - name: Run Terraform Init
-        id: init
-        run: terraform init -input=false
+      # Todo: add aws creds for terraform to
+      # - name: Run Terraform Init
+      #   id: init
+      #   run: terraform init -input=false
         
-      - name: Run Terraform Plan
-        id: plan
-        run: terraform plan -input=false
+      # - name: Run Terraform Plan
+      #   id: plan
+      #   run: terraform plan -input=false
         
 
