@@ -8,17 +8,31 @@ on:
     branches: [ "*" ]
 
 jobs:
-  include:
-    runs-on: ubuntu_latest
+  validate:
+    runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Code
+      
+      - name: Checkout Code       
         uses: actions/checkout@v4
       
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v4
+
       - name: Run terraform Validate
+        id: validate
         run: terraform validate
-      
+              
       - name: Run Terraform fmt
+        id: fmt
         run: terraform fmt -check -recursive
+
+      - name: Run Terraform Init
+        id: init
+        run: terraform init -input=false
+        
+      - name: Run Terraform Plan
+        id: plan
+        run: terraform plan -input=false
         
 
