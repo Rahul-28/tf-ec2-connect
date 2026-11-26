@@ -1,5 +1,5 @@
 name: CI Pipeline
-run-name: ${{ github.actor }} has triggered GitHub Actions 🚀
+# run-name: ${{ github.actor }} has triggered GitHub Actions 🚀
 
 on:
   push:
